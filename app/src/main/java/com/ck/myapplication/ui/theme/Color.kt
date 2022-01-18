@@ -58,6 +58,8 @@ val Lavender1 = Color(0xffebd6fe)
 val Lavender0 = Color(0xfff9f2ff)
 
 val Rose11 = Color(0xff7f0054)
+val White = Color(0xffffffff)
+val Light_White = Color(0xbdffffff)
 val Rose10 = Color(0xff97005c)
 val Rose9 = Color(0xffaf0060)
 val Rose8 = Color(0xffc30060)

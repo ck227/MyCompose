@@ -14,12 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import com.ck.myapplication.ui.home.LandingScreen
 import com.ck.myapplication.ui.home.MainScreen
-import com.ck.myapplication.ui.theme.JetsnackTheme
+import com.ck.myapplication.ui.theme.MyComposeTheme
 
 @Composable
 fun MyComposeApp() {
 
-    Surface(color = JetsnackTheme.colors.brand) {
+    Surface(color = MyComposeTheme.colors.primary) {
         val transitionState = remember { MutableTransitionState(SplashState.Shown) }
         val transition = updateTransition(transitionState, label = "splashTransition")
         val splashAlpha by transition.animateFloat(

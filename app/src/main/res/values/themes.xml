@@ -27,13 +27,17 @@
     <style name="Theme.MyCompose.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
     <style name="Theme.MyCompose" parent="Theme.Material.DayNight.NoActionBar">
-       <!-- <item name="android:colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorAccent">@color/colorPrimary</item>-->
+        <!--标题栏的颜色-->
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <!--状态栏的颜色-->
+        <item name="android:colorPrimaryDark">@color/colorPrimary</item>
+        <!--默认的光标、选中的RadioButton颜色-->
+        <item name="android:colorAccent">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-
-        <!--<item name="android:colorBackground">@color/colorPrimary</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>-->
     </style>
 
     <style name="Theme.Material.DayNight.NoActionBar" parent="@android:style/Theme.Material.Light.NoActionBar" />

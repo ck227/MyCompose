@@ -41,11 +41,13 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.ck.myapplication.R
+import com.ck.myapplication.ui.components.MyComposeSnackbar
 import com.ck.myapplication.ui.home.car.CarScreen
 import com.ck.myapplication.ui.home.home.HomeScreen
 import com.ck.myapplication.ui.home.my.MyScreen
 import com.ck.myapplication.ui.home.news.NewsScreen
-import com.ck.myapplication.ui.theme.JetsnackTheme
+import com.ck.myapplication.ui.theme.MyComposeTheme
+//import com.ck.myapplication.ui.theme.JetsnackTheme
 //import com.ck.myapplication.ui.theme.black
 //import com.ck.myapplication.ui.theme.deepBlue
 import com.google.accompanist.insets.navigationBarsPadding
@@ -84,14 +86,14 @@ fun MyComposeBottomBar(
     tabs: Array<HomeSections>,
     currentRoute: String,
     navigateToRoute: (String) -> Unit,
-    color1: Color = MaterialTheme.colors.primary,
-    contentColor: Color = MaterialTheme.colors.onPrimary
+    color: Color = MyComposeTheme.colors.primary,
+    contentColor: Color = MyComposeTheme.colors.iconInteractive
 ) {
     val routes = remember { tabs.map { it.route } }
     val currentSection = tabs.first { it.route == currentRoute }
 
     Surface(
-        color = color1,
+        color = color,
         contentColor = contentColor
     ) {
         val springSpec = SpringSpec<Float>(
@@ -99,10 +101,10 @@ fun MyComposeBottomBar(
             stiffness = 800f,
             dampingRatio = 0.8f
         )
-        JetsnackBottomNavLayout(
+        MyComposeBottomNavLayout(
             selectedIndex = currentSection.ordinal,
             itemCount = routes.size,
-            indicator = { JetsnackBottomNavIndicator() },
+            indicator = { MyComposeBottomNavIndicator() },
             animSpec = springSpec,
             modifier = Modifier.navigationBarsPadding(start = false, end = false)
         ) {
@@ -110,9 +112,9 @@ fun MyComposeBottomBar(
                 val selected = section == currentSection
                 val tint by animateColorAsState(
                     if (selected) {
-                        MaterialTheme.colors.primary
+                        MyComposeTheme.colors.iconInteractive
                     } else {
-                        MaterialTheme.colors.onPrimary
+                        MyComposeTheme.colors.iconInteractiveInactive
                     }
                 )
 
@@ -148,7 +150,7 @@ fun MyComposeBottomBar(
 }
 
 @Composable
-private fun JetsnackBottomNavLayout(
+private fun MyComposeBottomNavLayout(
     selectedIndex: Int,
     itemCount: Int,
     animSpec: AnimationSpec<Float>,
@@ -312,9 +314,9 @@ private fun MeasureScope.placeTextAndIcon(
 }
 
 @Composable
-private fun JetsnackBottomNavIndicator(
+private fun MyComposeBottomNavIndicator(
     strokeWidth: Dp = 2.dp,
-    color: Color = MaterialTheme.colors.onPrimary,
+    color: Color = MyComposeTheme.colors.iconPrimary,
     shape: Shape = BottomNavIndicatorShape
 ) {
     Spacer(
