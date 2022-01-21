@@ -8,12 +8,10 @@ import com.ck.myapplication.ui.MyComposeApp
 import com.ck.myapplication.ui.theme.MyComposeTheme
 import com.google.accompanist.insets.ProvideWindowInsets
 
-//import com.ck.myapplication.ui.theme.MyComposeTheme
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //是否占用全部屏幕？
+        //true内容不填充状态栏，false填充
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             //监听界面状态信息？通知栏，导航栏，软键盘？

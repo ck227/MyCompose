@@ -42,7 +42,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
             startDestination = MainDestinations.HOME_ROUTE,
             modifier = Modifier.padding(innerPaddingModifier)
         ) {
-            jetsnackNavGraph(
+            myComposeNavGraph(
                 onSnackSelected = appState::navigateToSnackDetail,
                 upPress = appState::upPress
             )
@@ -50,7 +50,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
     }
 }
 
-private fun NavGraphBuilder.jetsnackNavGraph(
+private fun NavGraphBuilder.myComposeNavGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
     upPress: () -> Unit
 ) {

@@ -34,17 +34,21 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 private val LightColorPalette = MyComposeColors(
     isDark = false,
     primary = Rose11,
-    iconPrimary = White,
-    iconInteractive = White,
-    iconInteractiveInactive = Light_White,
+    iconPrimary = Neutral0,
+    iconInteractive = Neutral0,
+    iconInteractiveInactive = Neutral1,
+    baseBackgroundColor = Neutral0,
+    textSecondary = Neutral7,
 )
 
 private val DarkColorPalette = MyComposeColors(
     isDark = true,
     primary = Rose11,
-    iconPrimary = White,
-    iconInteractive = White,
-    iconInteractiveInactive = Light_White,
+    iconPrimary = Neutral0,
+    iconInteractive = Neutral0,
+    iconInteractiveInactive = Neutral1,
+    baseBackgroundColor = Neutral0,
+    textSecondary = Neutral7,
 )
 
 @Composable
@@ -55,11 +59,19 @@ fun MyComposeTheme(
     val colors = if (darkTheme) DarkColorPalette else LightColorPalette
 
     val sysUiController = rememberSystemUiController()
-//    SideEffect {
+    SideEffect {
 //        sysUiController.setSystemBarsColor(
-//            color = colors.uiBackground.copy(alpha = AlphaNearOpaque)
+//            color = colors.statusIconColor.copy(alpha = AlphaNearOpaque)
 //        )
-//    }
+//        sysUiController.setStatusBarColor(
+//            color = colors.iconPrimary
+//        )
+
+        sysUiController.setSystemBarsColor(
+            color = Color.Transparent,
+            darkIcons = !darkTheme
+        )
+    }
 
     ProvideMyComposeColors(colors) {
         MaterialTheme(
@@ -87,6 +99,8 @@ class MyComposeColors(
     iconPrimary: Color,
     iconInteractive: Color,
     iconInteractiveInactive: Color,
+    baseBackgroundColor: Color,
+    textSecondary: Color,
 
     ) {
     var isDark by mutableStateOf(isDark)
@@ -99,6 +113,10 @@ class MyComposeColors(
         private set
     var iconInteractiveInactive by mutableStateOf(iconInteractiveInactive)
         private set
+    var baseBackgroundColor by mutableStateOf(baseBackgroundColor)
+        private set
+    var textSecondary by mutableStateOf(textSecondary)
+        private set
 
     fun update(other: MyComposeColors) {
         isDark = other.isDark
@@ -106,6 +124,8 @@ class MyComposeColors(
         iconPrimary = other.iconPrimary
         iconInteractive = other.iconInteractive
         iconInteractiveInactive = other.iconInteractiveInactive
+        baseBackgroundColor = other.baseBackgroundColor
+        textSecondary = other.textSecondary
     }
 
     fun copy(): MyComposeColors = MyComposeColors(
@@ -114,6 +134,8 @@ class MyComposeColors(
         iconPrimary = iconPrimary,
         iconInteractive = iconInteractive,
         iconInteractiveInactive = iconInteractiveInactive,
+        baseBackgroundColor = baseBackgroundColor,
+        textSecondary = textSecondary,
     )
 }
 

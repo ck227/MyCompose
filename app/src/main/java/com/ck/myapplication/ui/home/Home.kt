@@ -67,13 +67,13 @@ fun NavGraphBuilder.addHomeGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    composable(HomeSections.FEED.route) { from ->
+    composable(HomeSections.FEED.route) {
         HomeScreen(modifier)
     }
-    composable(HomeSections.SEARCH.route) { from ->
+    composable(HomeSections.SEARCH.route) {
         CarScreen(modifier)
     }
-    composable(HomeSections.CART.route) { from ->
+    composable(HomeSections.CART.route) {
         NewsScreen(modifier)
     }
     composable(HomeSections.PROFILE.route) {
