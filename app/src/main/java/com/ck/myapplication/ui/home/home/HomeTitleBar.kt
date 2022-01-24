@@ -61,11 +61,7 @@ fun HomeTitleBar(modifier: Modifier = Modifier) {
                         )
                     }
                 }
-
-
             }
-
-
         }
         Divider()
     }

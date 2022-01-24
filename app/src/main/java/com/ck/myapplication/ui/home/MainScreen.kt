@@ -12,7 +12,9 @@ import com.ck.myapplication.ui.MainDestinations
 import com.ck.myapplication.ui.components.MyComposeSnackbar
 import com.ck.myapplication.ui.rememberMyComposeAppState
 import com.google.accompanist.insets.systemBarsPadding
+import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalPagerApi
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
 
@@ -50,6 +52,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
     }
 }
 
+@ExperimentalPagerApi
 private fun NavGraphBuilder.myComposeNavGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
     upPress: () -> Unit

@@ -7,7 +7,9 @@ import androidx.core.view.WindowCompat
 import com.ck.myapplication.ui.MyComposeApp
 import com.ck.myapplication.ui.theme.MyComposeTheme
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalPagerApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

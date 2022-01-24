@@ -51,6 +51,7 @@ import com.ck.myapplication.ui.theme.MyComposeTheme
 //import com.ck.myapplication.ui.theme.black
 //import com.ck.myapplication.ui.theme.deepBlue
 import com.google.accompanist.insets.navigationBarsPadding
+import com.google.accompanist.pager.ExperimentalPagerApi
 
 enum class HomeSections(
     @StringRes val title: Int,
@@ -63,6 +64,7 @@ enum class HomeSections(
     PROFILE(R.string.home_profile, Icons.Outlined.AccountCircle, "home/profile")
 }
 
+@ExperimentalPagerApi
 fun NavGraphBuilder.addHomeGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
     modifier: Modifier = Modifier

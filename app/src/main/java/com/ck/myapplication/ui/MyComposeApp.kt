@@ -14,7 +14,9 @@ import androidx.compose.ui.draw.alpha
 import com.ck.myapplication.ui.home.LandingScreen
 import com.ck.myapplication.ui.home.MainScreen
 import com.ck.myapplication.ui.theme.MyComposeTheme
+import com.google.accompanist.pager.ExperimentalPagerApi
 
+@ExperimentalPagerApi
 @Composable
 fun MyComposeApp() {
 

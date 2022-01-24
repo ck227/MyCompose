@@ -24,10 +24,12 @@ object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.3"
 
     object Accompanist {
-        const val version = "0.22.0-rc"
+        const val version = "0.24.0-alpha"
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val systemuicontroller = "com.google.accompanist:accompanist-systemuicontroller:$version"
         const val flowlayouts = "com.google.accompanist:accompanist-flowlayout:$version"
+        const val pager = "com.google.accompanist:accompanist-pager:$version"
+        const val pagerIndicators = "com.google.accompanist:accompanist-pager-indicators:$version"
     }
 
     object Kotlin {
